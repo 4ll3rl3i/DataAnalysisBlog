@@ -5,59 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-    .sidenav {
-        height: 100%;
-        width: 160px;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #111;
-        overflow-x: hidden;
-        padding-top: 20px;
-    }
-
-    .sidenav a {
-        padding: 6px 8px 6px 16px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #818181;
-        display: block;
-    }
-
-    .sidenav a:hover {
-        color: #f1f1f1;
-    }
-
-    .main {
-        margin-left: 160px;
-        padding: 0px 10px;
-    }
-
-    @media screen and (max-height: 450px) {
-        .sidenav {
-            padding-top: 15px;
-        }
-
-        .sidenav a {
-            font-size: 18px;
-        }
-    }
-</style>
+<link rel="stylesheet" href="styles.css">
 
 <body>
     <div class="sidenav">
-        <header>Navigation</header>
-        <a href="file1.html">link1</a>
-        <a href="index.html">link2</a>
-        <a href="#">link3</a>
-        <a href="#">link4</a>
+        <a href="index.html" style="font-size:30px"><strong>Project</strong></a>
+        <hr>
+        <a href="data.html">Data</a>
+        <hr>
+        <z>Results:</z>
+        <a href="challenger_masteries.html">Challenger Masteries</a>
+        <a href="losers_queue.html">Losers Queue</a>
+        <a href="first_blood_win_rate.html">First Blood Win Rate</a>
+        <a href="higher_ranking_team_win_rate.html">Higher Ranking Team Win Rate</a>
+        <a href="rank_distribution_platinum_2.html">Rank Distribution Platinum 2</a>
+        <a href="player_duplicates.html">(Player Duplicates)</a>
     </div>
     <div class="main">
-        <h1>Test Index</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores vel laborum recusandae natus maxime
-            numquam deleniti iusto, ex optio fuga tenetur reiciendis illo odit nulla nobis, labore saepe debitis amet.
+        <h1>Analysis of player data from League of Legends</h1>
+        <hr>
+        <h3>Disclaimer</h3>
+        <p>This project was created as part of a Data Science module as a university project. It is neither
+            trying nor claiming to be 100% accurate in its scientific approach. Its purpose is to help me learn and
+            understand how the work with
+            big amounts of data from an API works, how to clean and process these inputs and how to present them in a
+            fashionable way.
+        </p>
+        <h3>Legal</h3>
+        <p>This project isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone
+            officially involved in producing or managing Riot Games properties. Riot Games, and all associated
+            properties are trademarks or registered trademarks of Riot Games, Inc.
+        </p>
+        <hr>
+        <h3>League of Legends</h3>
+        <p>League of Legends is a MOBA video game by Riot Games. There are different game modes, one of them is called
+            "Ranked Solo/Duo". This will be the only mode covered in this analysis since it's the most important and
+            respected one. Playing this mode grants League Points (LP), which determine the rank of a player. Winning
+            games means winning LP, losing games means losing LP. There are 10 rank tiers in total, 7 of which are
+            divided into divisions reaching from 4 (lowest) to 1 (highest). The highest three ranks are not divided into
+            divisions, but have only one division each. The tier and division of a player make up
+            their rank, for example:
+        </p>
+        <li>
+            <il>Tier: Silver</il>
+        </li>
+        <li>
+            <il>Division: 2 (II)</il>
+        </li>
+        <li>
+            <il>Rank: Silver II</il>
+        </li>
+        <p>All we need to know for now is the order of these tiers, from lowest (Iron) to highest (Challenger):</p>
+        <p>Iron >>> Bronze >>> Silver >>> Gold >>> Platinum >>> Emerald >>> Diamond >>> Master >>> Grandmaster >>>
+            Challenger</p>
+        <p>If you want to learn more about these ranks or the game in general, you can do <a
+                href="https://support-leagueoflegends.riotgames.com/hc/en-us/articles/4406004330643-Ranked-Tiers-Divisions-and-Queues"
+                target="_blank">on the official website</a>.
         </p>
     </div>
 </body>

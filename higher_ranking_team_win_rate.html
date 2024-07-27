@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="styles.css">
+
+<body>
+    <div class="sidenav">
+        <a href="index.html" style="font-size:30px"><strong>Project</strong></a>
+        <hr>
+        <a href="data.html">Data</a>
+        <hr>
+        <z>Results:</z>
+        <a href="challenger_masteries.html">Challenger Masteries</a>
+        <a href="losers_queue.html">Losers Queue</a>
+        <a href="first_blood_win_rate.html">First Blood Win Rate</a>
+        <a href="higher_ranking_team_win_rate.html">Higher Ranking Team Win Rate</a>
+        <a href="rank_distribution_platinum_2.html">Rank Distribution Platinum 2</a>
+        <a href="player_duplicates.html">(Player Duplicates)</a>
+    </div>
+    <div class="main">
+        <h1>Higher Ranking Team Win Rate</h1>
+        <hr>
+        <h3>Disclaimer</h3>
+        <p>
+            The game data used here can be several weeks or even months old, since I only looked into the last 100 games
+            per player. The ranks of all players are more recent, that means that players from a game likely didn't have
+            the same rank they do now when they played that game. Better players are more likely to climb in the ranks
+            (thus achieving higher scores in this analysis) and worse players vice versa. To make this more accurate in
+            actually predicting games outcomes I would've needed to analyze games right after they were played, which I
+            didn't have the time or resources to when making this project. After all, this is still an interesting
+            insight into how the ranks correlate with actual game results but should be handled with care when making
+            conclusions.
+        </p>
+        <hr>
+        <p>
+            Similar to the First Blood Win Rate, I looked into wether the team with the higher average rank would win or
+            lose the game. Since ranks are not numerical I tried putting them into numbers by assigning a value for each
+            tier and division. For example, Bronze II would grant 4 points for Bronze and 2 points for II, making it 6
+            points in total.
+        </p>
+        <code>
+            def get_rank_points(tier, division):<br>
+        &nbsp;&nbsp;        if (tier == "IRON"):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            tier_points = 0<br>
+        &nbsp;&nbsp;        elif (tier == "BRONZE"):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            tier_points = 4<br>
+        &nbsp;&nbsp;        elif (tier == "SILVER"):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            tier_points = 8<br>
+        &nbsp;&nbsp;        elif (tier == "GOLD"):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            tier_points = 12<br>
+        &nbsp;&nbsp;        elif (tier == "PLATINUM"):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            tier_points = 16<br>
+        &nbsp;&nbsp;        elif (tier == "EMERALD"):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            tier_points = 20<br>
+        &nbsp;&nbsp;        elif (tier == "DIAMOND"):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            tier_points = 24<br>
+        &nbsp;&nbsp;        elif (tier == "MASTER"):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            return 28<br>
+        &nbsp;&nbsp;        elif (tier == "GRANDMASTER"):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            return 29<br>
+        &nbsp;&nbsp;        elif (tier == "CHALLENGER"):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            return 30<br>
+        &nbsp;&nbsp;            <br>
+        &nbsp;&nbsp;        if (division == "I"):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            division_points = 3<br>
+        &nbsp;&nbsp;        elif (division == "II"):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            division_points = 2<br>
+        &nbsp;&nbsp;        elif (division == "III"):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            division_points = 1<br>
+        &nbsp;&nbsp;        elif (division == "IV"):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;            division_points = 0<br>
+        &nbsp;&nbsp;            <br>
+        &nbsp;&nbsp;        return tier_points + division_points<br>
+        </code>
+        <p>
+            After adding up all these scores per team, I counted how often the team with the higher ranking score would
+            win in the end. In some games there were players who didn't have a rank assigned to them. This can be the
+            case if that player hasn't played enough games to obtain a rank. Since this didn't happen too often I
+            simply decided to ignore these games and take them out of this statistic.
+        </p>
+        <img src="./img/higher_ranking_team.png" alt="Higher Ranking Team Win Rate Graph">
+    </div>
+</body>
+
+</html>

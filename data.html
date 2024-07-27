@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="styles.css">
+
+<body>
+    <div class="sidenav">
+        <a href="index.html" style="font-size:30px"><strong>Project</strong></a>
+        <hr>
+        <a href="data.html">Data</a>
+        <hr>
+        <z>Results:</z>
+        <a href="challenger_masteries.html">Challenger Masteries</a>
+        <a href="losers_queue.html">Losers Queue</a>
+        <a href="first_blood_win_rate.html">First Blood Win Rate</a>
+        <a href="higher_ranking_team_win_rate.html">Higher Ranking Team Win Rate</a>
+        <a href="rank_distribution_platinum_2.html">Rank Distribution Platinum 2</a>
+        <a href="player_duplicates.html">(Player Duplicates)</a>
+    </div>
+    <div class="main">
+        <h1>Data</h1>
+        <hr>
+        <p>
+            Riot Games <a href="https://developer.riotgames.com/apis" target="_blank">offers an API</a> for easy and
+            public access of
+            game and player data. After signing up and generating an API key you can send requests from specific content
+            and receive that content as a json file.
+        </p>
+        <p>
+            There are different kinds of json files used in this analysis:
+            <a href="masteries_puuid_challenger_1.json" target="_blank">masteries</a>,
+            <a href="page_1_player_7.json" target="_blank">players</a> and
+            <a href="EUW1_69450_altered.json" target="_blank">games</a>.
+            The mastery files are from the 300 Challengers in EUW at the time of 15th June 2024. All initial player
+            files are from either Silver II or Platinum II players (100 games each) who were at this rank on that date.
+            The game files are from the recent 100 Ranked Solo/Duo games of those 200 players at that time, making it
+            20,000 games in total. Additionally to the first downloaded 200 players, I then downloaded player
+            data from all players participating in these 20,000 games which weren't downloaded already. All following analysis is
+            based on this data.
+        </p>
+
+    </div>
+</body>
+
+</html>
